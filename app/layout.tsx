@@ -1,16 +1,12 @@
-import '@/app/ui/global.css';
-import {inter} from '@/app/ui/fonts';
-import { Metadata } from 'next';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: {
-    template: '%s | Acme Dashboard', 
-    default: 'Acme Dashboard',  
-  }, 
-  description: 'The official Next.js Course Dashboard, built with App Router.',
-  metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+  title: "Next.js on GitHub Pages",
+  description: "A Next.js web application on GitHub Pages",
 };
-
 
 export default function RootLayout({
   children,
@@ -19,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialised`}>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
