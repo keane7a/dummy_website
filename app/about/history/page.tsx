@@ -31,9 +31,6 @@ export default async function Page() {
     ]
 
     var i = 0; // Counter for reverse
-    var isReverse = false;
-
-
     return (
         <>
         <div className="flex flex-col items-center p-6 border-b border-black">
@@ -44,31 +41,22 @@ export default async function Page() {
             its founding principles and significant turning points. This information strengthens 
             commitment and alignment among your members by promoting a feeling of identity and continuity.
         </p>
-            <div className="flex flex-col w-full">
+            <div className="flex flex-col w-full mb-10">
                 {contents.map(content => {
-
                     // reverse function
                     i += 1
-                    if ((i % 2) == 0) {
-                        isReverse = true
-                    } else {
-                        isReverse = false;
-                    }
-                        
                     return (
-                        <>
-                        <div className={`md:flex  ${isReverse ? 'md:flex-row-reverse': ''}`}>
-                            <div className={`flex p-4 border-t border-black md:border-transparent items-center md:w-1/2 ${isReverse ? "md:border-l": ""}`}>
+                        <div className={`md:flex  ${i % 2 ? 'md:flex-row-reverse': ''}`} key={content.title}>
+                            <div className={`flex p-4 border-t border-black md:border-transparent items-center md:w-1/2 ${i % 2 ? "md:border-l": ""}`}>
                                 <div className="md:p-10 justify-center">
                                 <h1 className="text-center font-bold text-2xl pb-4">{content.title}</h1>
                                 <p className="text-center text-lg">{content.description}</p>
                                 </div>
                             </div>
-                            <div className={`flex pb-4 md:p-0 justify-center border-black md:border-transparent md:border-t md:w-1/2 ${isReverse ? "": "md:border-l"}`}>
-                                <Image className={`${isReverse ? "md:origin-top-left md:rotate-3": "md:origin-top-left md:-rotate-3"}`} src={content.image} width={600} height={600} alt={`Image of ${content.title}`} />
+                            <div className={`flex pb-4 md:p-0 justify-center border-black md:border-transparent md:border-t md:w-1/2 ${i % 2 ? "": "md:border-l"}`}>
+                                <Image className={`${i % 2 ? "md:origin-top-left md:rotate-3": "md:origin-top-left md:-rotate-3"}`} src={content.image} width={600} height={600} alt={`Image of ${content.title}`} />
                             </div>
                         </div>
-                        </>
                     )
                 })}
             </div>

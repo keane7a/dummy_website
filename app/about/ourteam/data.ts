@@ -6,7 +6,6 @@ export const contents: Content[] = [
     committees: 
     [
         {
-
             name: "Yehezkiel Tambunan", 
             role: "President", 
             course: "Year 3 BSc Business and Management",

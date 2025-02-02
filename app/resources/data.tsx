@@ -22,7 +22,7 @@ export var faqs = [
         question: "How do I get to Exeter from anywhere around UK?", 
         answer: 
         <>
-        "Once you arrive in the UK there are several public transportations you can choose from such as trains or buses. You can easily book your travels from Trainline or National Express. More information can be found <Link text="here" link="https://www.exeter.ac.uk/students/international/newstudents/planningyourtraveltouniversity/"/>
+        Once you arrive in the UK there are several public transportations you can choose from such as trains or buses. You can easily book your travels from Trainline or National Express. More information can be found <Link text="here" link="https://www.exeter.ac.uk/students/international/newstudents/planningyourtraveltouniversity/"/>
         </>  
     },
     {

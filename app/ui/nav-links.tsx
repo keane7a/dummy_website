@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import clsx from 'clsx';
+import {v4 as uuidv4} from "uuid";
+
 
 // Map of links to display in the navigation.
 const links = [
@@ -21,16 +23,14 @@ const links = [
 // Bad nested design function plz fix.
 export default function NavLinks() {
   const pathname = usePathname();
-  var i = 0;
+
   return (
     <>
       {links.map((link) => {
-        i += 1;
         return (
-        <>
-        <div className='group'>
+        <div className='group' key={uuidv4()}>
         <Link
-              key={link.name}
+              // key={link.name}
               href={link.href}
               className={clsx(
               "p-5 px-10 border hover:border-black md:hover:border-x-black md:hover:border-b-black flex",
@@ -46,9 +46,8 @@ export default function NavLinks() {
             <div className='group-hover:flex absolute flex-col hidden bg-white shadow text-center'>
             {link.child?.map((child) => {
               return (
-              <>
                 <Link
-                  key={child.name}
+                  key={uuidv4()}
                   href={child.href}
                   className={clsx(
                   "p-5 cursor-pointer border border-transparent hover:border-black", 
@@ -60,15 +59,11 @@ export default function NavLinks() {
                 >
                   <p>{child.name}</p>
                 </Link>
-              </>
               );
             })}
             </div>
           ) : (<></>)}
-        
-
         </div>
-        </>
         );
         })}
     </>

@@ -10,7 +10,6 @@ export function EventCard({event}: {event: Event}) {
     let currentTime = new Date()
     return (
         <>
-        <div className={"flex flex-col-reverse border border-black rounded-lg md:flex-row m-4 md:w-7/12 " + ((currentTime > event.startTime) ? 'grayscale': '')}>
             <div className="flex flex-col justify-between p-4">
                 <div>
                     <h2 className="font-bold text-xl mb-4">{event.title}</h2>
@@ -23,7 +22,6 @@ export function EventCard({event}: {event: Event}) {
                 </div>
             </div>
             <Image className="size-full md:h-auto md:w-auto rounded-r-lg" src={event.image} width={200} height={200} alt=""/>
-        </div>
         </>
     );
 }
@@ -34,7 +32,6 @@ export function ProfileCard({profile}: {profile: Profile}) {
 
     return (
         <>
-
         <div className="relative flex flex-col items-center basis-1/2 xl:basis-1/4 mb-4">
             <div>
                 <Image className="w-full size-80" src={profile.image} width={500} height={500} alt=""/>

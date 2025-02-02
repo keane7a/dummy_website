@@ -30,7 +30,7 @@ export default function Footer() {
             <div className={`flex flex-row justify-center ${style}`}>
                 {links.map((link) => {
                 return (
-                <Link key={link.name} href={link.href} className="p-1">
+                <Link key={link.name} href={link.href} className="p-1" target="_blank">
                     {link.icon}
                 </Link>
                 );
